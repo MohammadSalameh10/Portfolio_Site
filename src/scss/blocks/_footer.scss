@@ -1,0 +1,12 @@
+@use '../utils/utils.scss' as utils;
+
+.footer {
+    background-color: utils.$secondary-color;
+    color: utils.$primary-color;
+    padding: 20px 0;
+
+    &__text {
+        text-align: center;
+        font-size: 14px;
+    }
+}

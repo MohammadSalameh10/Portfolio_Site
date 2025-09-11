@@ -59,4 +59,14 @@ a {
   }
 }
 
+.footer {
+  background-color: #111;
+  color: #F8C8A5;
+  padding: 20px 0;
+}
+.footer__text {
+  text-align: center;
+  font-size: 14px;
+}
+
 /*# sourceMappingURL=main.css.map */
