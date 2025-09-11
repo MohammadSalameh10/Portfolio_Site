@@ -1,0 +1,12 @@
+@use './variables';
+@mixin button-styles ($theme) {
+    @if $theme =='primary' {
+        background-color: variables.$primary-color;
+        color: variables.$secondary-color;
+    }
+
+    @else if $theme =='secondary' {
+        background-color: variables.$secondary-color;
+        color: variables.$primary-color;
+    }
+}
