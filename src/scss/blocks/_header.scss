@@ -4,6 +4,7 @@
     background-color: utils.$secondary-color;
     color: utils.$primary-color;
     padding: 20px 0;
+
     nav {
         display: flex;
         justify-content: space-between;
@@ -15,10 +16,30 @@
             font-size: 20px;
         }
 
-        
+
     }
+
     &__menu {
         display: flex;
         gap: 20px;
+    }
+
+    &__toggle {
+        display: none;
+        cursor: pointer;
+        background-color: utils.$secondary-color;
+        color: utils.$primary-color;
+        border: none;
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: 576px) {
+       &__menu {
+           display: none;
+       }
+
+       &__toggle {
+           display: block;
+       }
     }
 }
