@@ -1,2 +1,2 @@
-@use './_variables';
-@use './_mixins';
+@forward 'variables';
+@forward 'mixins';
