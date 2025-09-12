@@ -1,0 +1,219 @@
+@use '../utils/utils.scss' as utils;
+
+.skills {
+    background-color: utils.$secondary-color;
+    padding: 120px 0;
+
+    &__title {
+        text-align: center;
+        color: utils.$primary-color;
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+
+    &__cards {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        .skills__card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            color: utils.$primary-color;
+            width: calc((100% / 3) - 30px);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid utils.$primary-color;
+            transition: all 0.4s ease-in-out;
+
+            &:hover {
+                transition: all 0.4s ease-in-out;
+                transform: translateY(-20px);
+            }
+
+            .skills__icon::before {
+                font-size: 50px;
+            }
+
+            .skills__name {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .skills__desc {
+                font-size: 20px;
+                line-height: 1.5;
+            }
+
+            .skills__button {
+                width: fit-content;
+                padding: 10px 20px;
+                border-radius: 7px;
+                font-size: 18px;
+                @include utils.button-styles('primary');
+            }
+
+        }
+    }
+
+    &__technical {
+        margin-top: 30px;
+        color: utils.$primary-color;
+
+        .skills__technical-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .skills__technical-list {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            .skills__technical-item {
+                width: calc((100% / 2) - 30px);
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .skills__tech-header {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    .skills__tech-icon::before {
+                        font-size: 25px;
+                    }
+
+                    .skills__tech-name {
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+
+                .skills__tech-body {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    .skills__percent {
+                        font-size: 20px;
+                    }
+
+                    .skills__progress {
+                        width: 100%;
+                        background-color: #2C2C2C;
+                        border-radius: 20px;
+                        overflow: hidden;
+                        height: 8px;
+
+                        .skills__progress-bar {
+                            height: 100%;
+                            background-color: utils.$primary-color;
+                            border-radius: 20px 0 0 20px;
+                            animation: load-bar 7s ease forwards;
+
+                            @keyframes load-bar {
+                                0% {
+                                    width: 0;
+                                }
+
+                                100% {
+                                    width: var(--progress-width);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        &__cards {
+
+            .skills__card {
+                width: 100%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__technical {
+            .skills__technical-list {
+                .skills__technical-item {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        &__cards {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+
+            .skills__card {
+
+                .skills__icon::before {
+                    font-size: 30px;
+                }
+
+                .skills__name {
+                    font-size: 18px;
+                }
+
+                .skills__desc {
+                    font-size: 16px;
+                }
+
+                .skills__button {
+                    padding: 5px 10px;
+                    border-radius: 7px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__technical {
+
+            .skills__technical-title {
+                font-size: 35px;
+            }
+
+            .skills__technical-list {
+      
+                .skills__technical-item {
+
+                    .skills__tech-header {
+                    
+                        .skills__tech-icon::before {
+                            font-size: 20px;
+                        }
+
+                        .skills__tech-name {
+                            font-size: 15px;
+                        }
+                    }
+
+                    .skills__tech-body {
+
+                        .skills__percent {
+                            font-size: 15px;
+                        }
+
+                        .skills__progress {
+                            height: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

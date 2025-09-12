@@ -31,6 +31,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 .header nav {
   display: flex;
@@ -104,7 +105,7 @@ a {
   gap: 15px;
 }
 .intro__content .intro__text .intro__social i {
-  border: #111 2px solid;
+  border: #111 3px solid;
   border-radius: 50%;
   color: #111;
   padding: 10px;
@@ -191,7 +192,7 @@ a {
 .projects__title {
   text-align: center;
   color: #F8C8A5;
-  font-size: 28px;
+  font-size: 35px;
   margin-bottom: 30px;
 }
 .projects__scroll {
@@ -226,6 +227,166 @@ a {
 .projects__btn .btn--primary {
   background-color: #F8C8A5;
   color: #111;
+}
+
+.skills {
+  background-color: #111;
+  padding: 120px 0;
+}
+.skills__title {
+  text-align: center;
+  color: #F8C8A5;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+.skills__cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.skills__cards .skills__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  color: #F8C8A5;
+  width: calc(33.3333333333% - 30px);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #F8C8A5;
+  transition: all 0.4s ease-in-out;
+}
+.skills__cards .skills__card:hover {
+  transition: all 0.4s ease-in-out;
+  transform: translateY(-20px);
+}
+.skills__cards .skills__card .skills__icon::before {
+  font-size: 50px;
+}
+.skills__cards .skills__card .skills__name {
+  font-size: 24px;
+  font-weight: bold;
+}
+.skills__cards .skills__card .skills__desc {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.skills__cards .skills__card .skills__button {
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 7px;
+  font-size: 18px;
+  background-color: #F8C8A5;
+  color: #111;
+}
+.skills__technical {
+  margin-top: 30px;
+  color: #F8C8A5;
+}
+.skills__technical .skills__technical-title {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+.skills__technical .skills__technical-list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.skills__technical .skills__technical-list .skills__technical-item {
+  width: calc(50% - 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.skills__technical .skills__technical-list .skills__technical-item .skills__tech-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.skills__technical .skills__technical-list .skills__technical-item .skills__tech-header .skills__tech-icon::before {
+  font-size: 25px;
+}
+.skills__technical .skills__technical-list .skills__technical-item .skills__tech-header .skills__tech-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+.skills__technical .skills__technical-list .skills__technical-item .skills__tech-body {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.skills__technical .skills__technical-list .skills__technical-item .skills__tech-body .skills__percent {
+  font-size: 20px;
+}
+.skills__technical .skills__technical-list .skills__technical-item .skills__tech-body .skills__progress {
+  width: 100%;
+  background-color: #2C2C2C;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 8px;
+}
+.skills__technical .skills__technical-list .skills__technical-item .skills__tech-body .skills__progress .skills__progress-bar {
+  height: 100%;
+  background-color: #F8C8A5;
+  border-radius: 20px 0 0 20px;
+  animation: load-bar 7s ease forwards;
+}
+@keyframes load-bar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: var(--progress-width);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .skills__cards .skills__card {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .skills__technical .skills__technical-list .skills__technical-item {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .skills__cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .skills__cards .skills__card .skills__icon::before {
+    font-size: 30px;
+  }
+  .skills__cards .skills__card .skills__name {
+    font-size: 18px;
+  }
+  .skills__cards .skills__card .skills__desc {
+    font-size: 16px;
+  }
+  .skills__cards .skills__card .skills__button {
+    padding: 5px 10px;
+    border-radius: 7px;
+    font-size: 16px;
+  }
+  .skills__technical .skills__technical-title {
+    font-size: 35px;
+  }
+  .skills__technical .skills__technical-list .skills__technical-item .skills__tech-header .skills__tech-icon::before {
+    font-size: 20px;
+  }
+  .skills__technical .skills__technical-list .skills__technical-item .skills__tech-header .skills__tech-name {
+    font-size: 15px;
+  }
+  .skills__technical .skills__technical-list .skills__technical-item .skills__tech-body .skills__percent {
+    font-size: 15px;
+  }
+  .skills__technical .skills__technical-list .skills__technical-item .skills__tech-body .skills__progress {
+    height: 5px;
+  }
 }
 
 .footer {
