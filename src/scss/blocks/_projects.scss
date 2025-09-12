@@ -1,0 +1,53 @@
+@use '../utils/utils.scss' as utils;
+
+.projects {
+    background-color: utils.$secondary-color;
+    padding: 50px 0;
+
+    &__title {
+        text-align: center;
+        color: utils.$primary-color;
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    &__scroll {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scrollbar-color: utils.$secondary-color utils.$primary-color;
+
+        .project-card {
+            scroll-snap-align: center;
+            min-width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+
+    }
+
+    &__btn {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .btn {
+            width: fit-content;
+            padding: 10px 20px;
+            border-radius: 7px;
+            font-size: 18px;
+        }
+
+        .btn--primary {
+            @include utils.button-styles('primary');
+        }
+    }
+}
