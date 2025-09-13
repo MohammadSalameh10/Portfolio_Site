@@ -58,17 +58,19 @@
                 display: flex;
                 gap: 15px;
 
-                i {
-                    border: utils.$secondary-color 3px solid;
-                    border-radius: 50%;
-                    color: utils.$secondary-color;
-                    padding: 20px;
-                    font-size: 20px;
-                    width: 30px;
-                    height: 30px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                a {
+                    i {
+                        border: utils.$secondary-color 3px solid;
+                        border-radius: 50%;
+                        color: utils.$secondary-color;
+                        padding: 20px;
+                        font-size: 20px;
+                        width: 30px;
+                        height: 30px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
                 }
             }
         }
@@ -84,7 +86,6 @@
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
-
 
                 .contact__form-row {
                     display: flex;
@@ -106,17 +107,15 @@
                     border: 3px solid utils.$secondary-color;
                     background-color: utils.$primary-color;
                     font-size: 18px;
-                }
 
-                .contact__input::placeholder,
-                .contact__textarea::placeholder {
-                    color: utils.$secondary-color;
-                    font-size: 18px;
-                }
+                    &::placeholder {
+                        color: utils.$secondary-color;
+                        font-size: 18px;
+                    }
 
-                .contact__input:focus,
-                .contact__textarea:focus {
-                    outline: none;
+                    &:focus {
+                        outline: none;
+                    }
                 }
 
                 .contact__textarea {
@@ -177,7 +176,6 @@
         &__form {
             .contact__form-box {
                 .contact__form-inner {
-
                     .contact__btn {
                         transition: none;
 
@@ -269,7 +267,6 @@
         &__form {
             .contact__form-box {
                 .contact__form-inner {
-
                     .contact__btn {
                         transition: none;
 

@@ -1,215 +1,198 @@
 @use '../utils/utils.scss' as utils;
 
 .intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: max(20px, 50px) 0;
+  background-image: url("../src/img/intro/banner.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  &__content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: max(20px, 50px) 0;
-    background-image: url("../src/img/intro/banner.webp");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    justify-content: center;
+    gap: 20px;
+    backdrop-filter: blur(5px);
 
+    .intro__image {
+      width: calc(50% - 20px);
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 80%;
+        border: 3px solid utils.$secondary-color;
+        border-radius: 50%;
+      }
+    }
+
+    .intro__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 15px;
+      width: min(50%, 50rem);
+
+      .intro__title {
+        font-size: 40px;
+      }
+
+      .intro__description {
+        font-size: 25px;
+        width: 80%;
+      }
+
+      .intro__social {
+        display: flex;
+        gap: 15px;
+
+        i {
+          border: 3px solid utils.$secondary-color;
+          border-radius: 50%;
+          color: utils.$secondary-color;
+          padding: 10px;
+          font-size: 20px;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+          &:hover {
+            background-color: utils.$primary-color;
+            color: utils.$secondary-color;
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .btn {
+        width: fit-content;
+        padding: 10px 20px;
+        border-radius: 7px;
+        font-size: 18px;
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+          background-color: #2c2a2a;
+        }
+
+        &:active {
+          transform: scale(0.95);
+          background-color: #2c2a2a;
+        }
+
+        &--secondary {
+          @include utils.button-styles('secondary');
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
     &__content {
-
-        .intro__image {
-            width: calc(50% - 20px);
-            display: flex;
-            justify-content: center;
-
-            img {
-                width: 80%;
-                border: 3px solid utils.$secondary-color;
-                border-radius: 50%;
-            }
+      .intro__text {
+        .intro__title {
+          font-size: 30px;
         }
 
-        .row {
-            align-items: center;
-            gap: 20px;
-            backdrop-filter: blur(5px);
+        .intro__description {
+          font-size: 20px;
+          width: 100%;
         }
 
-        .intro__text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 15px;
-            width: min(50%, 50rem);
-
-            .intro__title {
-                font-size: 40px;
-            }
-
-            .intro__description {
-                font-size: 25px;
-                width: 80%;
-            }
-
-            .intro__social {
-                display: flex;
-                gap: 15px;
-
-                i {
-                    border: utils.$secondary-color 3px solid;
-                    border-radius: 50%;
-                    color: utils.$secondary-color;
-                    padding: 10px;
-                    font-size: 20px;
-                    width: 50px;
-                    height: 50px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-
-            .btn {
-                width: fit-content;
-                padding: 10px 20px;
-                border-radius: 7px;
-                font-size: 18px;
-                transition: all 0.3s ease-in-out;
-
-                &:hover {
-                    transform: scale(1.05);
-                    background-color: #2c2a2a;
-                }
-
-                &:active {
-                    transform: scale(0.95);
-                    background-color: #2c2a2a;
-                }
-            }
-
-            .btn--secondary {
-                @include utils.button-styles('secondary');
-            }
+        .intro__social i {
+          font-size: 15px;
+          width: 40px;
+          height: 40px;
         }
+      }
     }
+  }
 
-    @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 992px) {
+    &__content {
+      .intro__image {
+        width: calc(55% - 20px);
+      }
 
-        .intro__content {
-            .intro__text {
-                .intro__title {
-                    font-size: 30px;
-                }
+      .intro__text {
+        width: calc(45% - 20px);
+        gap: 10px;
 
-                .intro__description {
-                    font-size: 20px;
-                    width: 100%;
-                }
-
-                .intro__social {
-
-                    i {
-                        font-size: 15px;
-                        width: 40px;
-                        height: 40px;
-                    }
-                }
-            }
+        .intro__title {
+          font-size: 25px;
         }
-    }
 
-    @media screen and (max-width: 992px) {
-
-        .intro__content {
-            .intro__image {
-                width: calc(55% - 20px);
-            }
-
-            .intro__text {
-                width: calc(45% - 20px);
-                gap: 10px;
-
-                .intro__title {
-                    font-size: 25px;
-                }
-
-                .intro__description {
-                    font-size: 18px;
-                }
-
-                .intro__social {
-
-                    i {
-                        font-size: 15px;
-                        width: 35px;
-                        height: 35px;
-                    }
-                }
-            }
+        .intro__description {
+          font-size: 18px;
         }
-    }
 
-    @media screen and (max-width: 768px) {
-
-        .intro__content {
-
-            .intro__image {
-                width: calc(100% - 20px);
-            }
-
-            .row {
-                flex-direction: column;
-            }
-
-            .intro__text {
-                width: calc(100% - 20px);
-                flex-direction: column;
-                align-items: center;
-
-                .intro__title {
-                    font-size: 25px;
-                }
-
-                .intro__description {
-                    font-size: 18px;
-                }
-
-                .intro__social {
-
-                    i {
-                        font-size: 15px;
-                        width: 35px;
-                        height: 35px;
-                    }
-                }
-
-                .btn {
-                    transition: none;
-
-                    &:hover {
-                        transform: none;
-                        background-color: utils.$secondary-color;
-                    }
-
-                    &:active {
-                        transform: none;
-                        background-color: utils.$secondary-color;
-                    }
-                }
-            }
+        .intro__social i {
+          font-size: 15px;
+          width: 35px;
+          height: 35px;
         }
+      }
     }
+  }
 
-    @media screen and (prefers-reduced-motion: reduce) {
+  @media screen and (max-width: 768px) {
+    &__content {
+      flex-direction: column;
+
+      .intro__image {
+        width: calc(100% - 20px);
+      }
+
+      .intro__text {
+        width: calc(100% - 20px);
+        flex-direction: column;
+        align-items: center;
+
+        .intro__title {
+          font-size: 25px;
+        }
+
+        .intro__description {
+          font-size: 18px;
+        }
+
+        .intro__social i {
+          font-size: 15px;
+          width: 35px;
+          height: 35px;
+        }
+
         .btn {
-            transition: none;
+          transition: none;
 
-            &:hover {
-                transform: none;
-                background-color: utils.$secondary-color;
-            }
-
-            &:active {
-                transform: none;
-                background-color: utils.$secondary-color;
-            }
+          &:hover,
+          &:active {
+            transform: none;
+            background-color: utils.$secondary-color;
+          }
         }
+      }
     }
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    .btn {
+      transition: none;
+
+      &:hover,
+      &:active {
+        transform: none;
+        background-color: utils.$secondary-color;
+      }
+    }
+  }
 }
