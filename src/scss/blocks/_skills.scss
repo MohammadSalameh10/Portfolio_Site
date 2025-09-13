@@ -54,6 +54,17 @@
                 border-radius: 7px;
                 font-size: 18px;
                 @include utils.button-styles('primary');
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.05);
+                    background-color: #F2A46D;
+                }
+
+                &:active {
+                    transform: scale(0.95);
+                    background-color: #F2A46D;
+                }
             }
 
         }
@@ -145,6 +156,24 @@
     }
 
     @media screen and (max-width: 768px) {
+        &__cards {
+            .skills__card {
+                .skills__button {
+                    transition: none;
+
+                    &:hover {
+                        transform: none;
+                        background-color: utils.$primary-color;
+                    }
+
+                    &:active {
+                        transform: none;
+                        background-color: utils.$secondary-color;
+                    }
+                }
+            }
+        }
+
         &__technical {
             .skills__technical-list {
                 .skills__technical-item {
@@ -185,6 +214,24 @@
     }
 
     @media screen and (prefers-reduced-motion: reduce) {
+        &__cards {
+            .skills__card {
+                .skills__button {
+                    transition: none;
+
+                    &:hover {
+                        transform: none;
+                        background-color: utils.$primary-color;
+                    }
+
+                    &:active {
+                        transform: none;
+                        background-color: utils.$secondary-color;
+                    }
+                }
+            }
+        }
+
         .skills__card {
             transition: none;
 
@@ -216,13 +263,13 @@
     }
 
     @media screen and (max-width: 576px) {
-       &__title {
-           font-size: 28px;
-       }
+        &__title {
+            font-size: 28px;
+        }
 
-       &__cards {
-           display: flex;
-           gap: 30px;
+        &__cards {
+            display: flex;
+            gap: 30px;
             flex-wrap: wrap;
 
             .skills__card {

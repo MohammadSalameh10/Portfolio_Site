@@ -71,7 +71,17 @@
             background-color: utils.$secondary-color;
             color: utils.$primary-color;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.05);
+                background-color: #2C2C2C;
+            }
+
+            &:active {
+                transform: scale(0.95);
+                background-color: #2C2C2C;
+            }
         }
     }
 
@@ -119,12 +129,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 50px;
 
         .btn {
-            width: fit-content;
-            padding: 10px 20px;
             border-radius: 7px;
-            font-size: 18px;
+            padding: 15px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.05);
+                background-color: #F2A46D;
+            }
+
+            &:active {
+                transform: scale(0.95);
+                background-color: #F2A46D;
+            }
         }
 
         .btn--primary {
@@ -146,31 +166,66 @@
                 }
             }
         }
+    }
 
-        @media screen and (max-width: 768px) {
-            &__scroll {
-                display: none;
-            }
-
-            &__cards {
-                display: grid;
-                grid-template-columns: 1fr;
-            }
-
+    @media screen and (max-width: 768px) {
+        &__scroll {
+            display: none;
         }
 
-        @media screen and (max-width: 576px) {
-            &__title {
-                font-size: 28px;
-            }
+        &__cards {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
 
-            &__btn {
+        &__btn {
 
-                .btn {
-                    padding: 5px 10px;
+            .btn {
+                transition: none;
+
+                &:hover {
+                    transform: none;
+                    background-color: utils.$primary-color;
+                }
+
+                &:active {
+                    transform: none;
+                    background-color: utils.$primary-color;
                 }
             }
+        }
+    }
 
+    @media screen and (max-width: 576px) {
+        &__title {
+            font-size: 28px;
+        }
+
+        &__btn {
+
+            .btn {
+                padding: 10px;
+            }
+        }
+    }
+
+
+    @media screen and (prefers-reduced-motion: reduce) {
+        &__btn {
+
+            .btn {
+                transition: none;
+
+                &:hover {
+                    transform: none;
+                    background-color: utils.$primary-color;
+                }
+
+                &:active {
+                    transform: none;
+                    background-color: utils.$primary-color;
+                }
+            }
         }
     }
 }
