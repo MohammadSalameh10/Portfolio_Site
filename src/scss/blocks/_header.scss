@@ -54,7 +54,7 @@
     display: none;
 
     &:checked {
-      + .header__menu-button-container {
+      +.header__menu-button-container {
         .header__menu-button {
           background: rgba(255, 255, 255, 0);
 
@@ -70,7 +70,7 @@
         }
       }
 
-      ~ .header__menu {
+      ~.header__menu {
         li {
           height: 2.5em;
           padding: 0.5em;
