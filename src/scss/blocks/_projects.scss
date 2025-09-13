@@ -75,6 +75,45 @@
         }
     }
 
+    &__cards {
+
+        display: none;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid utils.$primary-color;
+
+            .project-card__image {
+                width: 100%;
+                display: block;
+                border-radius: 10px 10px 0 0;
+            }
+
+            .project-card__overlay {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .project-card__desc {
+                font-size: 16px;
+                color: utils.$primary-color;
+                margin-bottom: 10px;
+            }
+
+            .project-card__link {
+                display: inline-block;
+                padding: 8px 15px;
+                border-radius: 5px;
+                @include utils.button-styles('primary');
+            }
+        }
+    }
+
     &__btn {
         margin-top: 30px;
         display: flex;
@@ -93,17 +132,45 @@
         }
     }
 
-    @media screen and (max-width: 576px) {
-        &__title {
-            font-size: 28px;
-        }
+    @media screen and (max-width: 992px) {
+        &__scroll {
 
-        &__btn {
+            .project-card {
 
-            .btn {
-                padding: 5px 10px;
+                .project-card__desc {
+                    font-size: 16px;
+                }
+
+                .project-card__link {
+                    padding: 8px 16px;
+                }
             }
         }
 
+        @media screen and (max-width: 768px) {
+            &__scroll {
+                display: none;
+            }
+
+            &__cards {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media screen and (max-width: 576px) {
+            &__title {
+                font-size: 28px;
+            }
+
+            &__btn {
+
+                .btn {
+                    padding: 5px 10px;
+                }
+            }
+
+        }
     }
 }
