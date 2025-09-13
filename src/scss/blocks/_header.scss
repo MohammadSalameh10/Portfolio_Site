@@ -18,7 +18,7 @@
         a {
             color: utils.$primary-color;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 25px;
         }
 
     }
@@ -44,6 +44,12 @@
 
         &__toggle {
             display: block;
+        }
+
+        nav {
+            a {
+                font-size: 18px;
+            }
         }
     }
 }

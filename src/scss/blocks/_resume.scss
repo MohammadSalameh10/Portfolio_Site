@@ -23,7 +23,7 @@
         color: utils.$primary-color;
     }
 
-      &__btn {
+    &__btn {
         border-radius: 30px;
         position: relative;
         border: 1px solid utils.$primary-color;
@@ -71,6 +71,44 @@
 
         &:hover .resume__btn-text {
             color: utils.$secondary-color;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        &__btn {
+            .resume__btn--hover {
+                display: none;
+                transition: none;
+                transform: none;
+            }
+
+            &:hover .resume__btn-text {
+                color: utils.$primary-color;
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 30px 0;
+
+        &__title {
+            font-size: 28px;
+        }
+
+        &__text {
+            font-size: 15px;
+        }
+
+        &__btn {
+            .resume__btn-text {
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+
+            .resume__btn-icon {
+                width: 40px;
+                height: 40px;
+            }
         }
     }
 }

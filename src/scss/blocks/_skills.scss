@@ -2,7 +2,7 @@
 
 .skills {
     background-color: utils.$secondary-color;
-    padding: 120px 0;
+    padding: 50px 0;
 
     &__title {
         text-align: center;
@@ -151,12 +151,77 @@
                 }
             }
         }
+
+        .skills__card {
+
+            transition: none;
+
+            &:hover {
+                transition: none;
+                transform: none;
+            }
+        }
+
+        &__technical {
+
+            .skills__technical-list {
+
+                .skills__technical-item {
+
+                    .skills__tech-body {
+
+                        .skills__progress {
+
+                            .skills__progress-bar {
+                                animation: none;
+                                width: var(--progress-width);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+        .skills__card {
+            transition: none;
+
+            &:hover {
+                transition: none;
+                transform: none;
+            }
+        }
+
+        &__technical {
+
+            .skills__technical-list {
+
+                .skills__technical-item {
+
+                    .skills__tech-body {
+
+                        .skills__progress {
+
+                            .skills__progress-bar {
+                                animation: none;
+                                width: var(--progress-width);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @media screen and (max-width: 576px) {
-        &__cards {
-            display: flex;
-            gap: 30px;
+       &__title {
+           font-size: 28px;
+       }
+
+       &__cards {
+           display: flex;
+           gap: 30px;
             flex-wrap: wrap;
 
             .skills__card {
@@ -175,8 +240,7 @@
 
                 .skills__button {
                     padding: 5px 10px;
-                    border-radius: 7px;
-                    font-size: 16px;
+                    font-size: 18px;
                 }
             }
         }
@@ -184,15 +248,15 @@
         &__technical {
 
             .skills__technical-title {
-                font-size: 35px;
+                font-size: 28px;
             }
 
             .skills__technical-list {
-      
+
                 .skills__technical-item {
 
                     .skills__tech-header {
-                    
+
                         .skills__tech-icon::before {
                             font-size: 20px;
                         }

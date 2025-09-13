@@ -50,4 +50,18 @@
             @include utils.button-styles('primary');
         }
     }
+
+    @media screen and (max-width: 576px) {
+        &__title {
+            font-size: 28px;
+        }
+
+        &__btn {
+
+            .btn {
+                padding: 5px 10px;
+            }
+        }
+
+    }
 }
