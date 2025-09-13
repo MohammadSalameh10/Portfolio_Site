@@ -15,11 +15,12 @@
         display: flex;
         gap: 30px;
         flex-wrap: wrap;
+        align-items: stretch;
 
         .skills__card {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             gap: 20px;
             color: utils.$primary-color;
             width: calc((100% / 3) - 30px);

@@ -13,22 +13,26 @@
 <body>
 
     <!-- Header / Navbar -->
-    <header class="header">
-        <div class="container">
-            <nav class="header__nav" aria-label="Main Navigation">
-                <a href="#" class="header__logo">Portfolio</a>
-                <ul class="header__menu">
-                    <li class="header__item"><a href="#projects" class="header__link">Projects</a></li>
-                    <li class="header__item"><a href="#skills" class="header__link">Skills</a></li>
-                    <li class="header__item"><a href="#resume" class="header__link">Resume</a></li>
-                    <li class="header__item"><a href="#contact" class="header__link">Contact</a></li>
-                </ul>
-                <button class="header__toggle" aria-label="Toggle Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+    <header class="top-nav">
+        <div class="logo">
+            Portfolio
         </div>
+
+        <!-- Checkbox Hack -->
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+            <div class="menu-button"></div>
+        </label>
+
+        <!-- Menu Items -->
+        <ul class="menu">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </header>
+
 
     <main>
 
@@ -74,22 +78,38 @@
             <div class="container">
                 <div class="projects__scroll">
                     <article class="project-card">
-                        <img src="./img/projects/potfolio.png" alt="Portfolio project screenshot"
+                        <img src="./img/projects/portfolio.png" alt="Portfolio project screenshot"
                             class="project-card__image" />
-
+                        <div class="project-card__overlay">
+                            <p class="project-card__desc">This is my personal portfolio website built with HTML, CSS,
+                                and JS.</p>
+                            <a href="https://github.com/MohammadSalameh10/Protfolio_Web1" target="_blank" class="project-card__link">Visit
+                                Project</a>
+                        </div>
                     </article>
                     <article class="project-card">
                         <img src="./img/projects/streamvibe.png" alt="StreamVibe movie streaming project screenshot"
                             class="project-card__image" />
-
+                        <div class="project-card__overlay">
+                            <p class="project-card__desc">A movie streaming website built with HTML, CSS, and JS,
+                                featuring a modern design and user-friendly interface.</p>
+                            <a href="https://github.com/MohammadSalameh10/StreamVibe" target="_blank" class="project-card__link">Visit
+                                Project</a>
+                        </div>
                     </article>
                     <article class="project-card">
                         <img src="./img/projects/jinstore.png" alt="Jinstore e-commerce project screenshot"
                             class="project-card__image" />
+                        <div class="project-card__overlay">
+                            <p class="project-card__desc">An e-commerce website built with HTML, CSS, and JS,
+                                featuring a sleek design and intuitive user experience.</p>
+                            <a href="https://github.com/MohammadSalameh10/Ecommerce" target="_blank" class="project-card__link">Visit
+                                Project</a>
+                        </div>
                     </article>
                 </div>
                 <div class="projects__btn">
-                    <a href="#projects" class="btn btn--primary">View All Projects</a>
+                    <a href="https://github.com/MohammadSalameh10?tab=repositories" target="_blank" class="btn btn--primary">View All Projects</a>
                 </div>
             </div>
         </section>
@@ -108,7 +128,7 @@
                             Skilled at creating layouts that integrate effectively with CSS and JavaScript,
                             providing a strong and reliable foundation for modern web projects.
                         </p>
-                        <a href="#more-info" class="skills__button">Learn More</a>
+                        <a href="#skills" class="skills__button">Learn More</a>
                     </div>
                     <div class="skills__card">
                         <i class="fab fa-css3-alt skills__icon" aria-hidden="true"></i>
@@ -119,7 +139,7 @@
                             Experienced with animations, transitions, and reusable classes that simplify code
                             while maintaining clarity, scalability, and performance in development.
                         </p>
-                        <a href="#more-info" class="skills__button">Learn More</a>
+                        <a href="#skills" class="skills__button">Learn More</a>
                     </div>
                     <div class="skills__card">
                         <i class="fab fa-js skills__icon" aria-hidden="true"></i>
@@ -130,7 +150,7 @@
                             applications, ensuring professional standards in modern projects and supporting strong web
                             solutions.
                         </p>
-                        <a href="#more-info" class="skills__button">Learn More</a>
+                        <a href="#skills" class="skills__button">Learn More</a>
                     </div>
                 </div>
                 <div class="skills__technical">
@@ -245,8 +265,7 @@
                         <h3 class="contact__heading">Let's Work Together</h3>
                         <p class="contact__desc">
                             I'm open to freelance opportunities and collaborations. Feel free to reach out to discuss
-                            your
-                            project or just to say hello!
+                            your project or just to say hello!
                         </p>
                         <div class="contact__details">
                             <div class="contact__detail">
@@ -289,6 +308,7 @@
                             </a>
                         </div>
                     </div>
+
                     <div class="contact__form-box">
                         <form class="contact__form-inner">
                             <div class="contact__form-row">
@@ -313,10 +333,14 @@
                             </div>
                             <button type="submit" class="contact__btn">Submit</button>
                         </form>
+                        <div class="contact__info-box">
+                            Replies within a week
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
     </main>
 

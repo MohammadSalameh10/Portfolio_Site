@@ -13,6 +13,7 @@
 
     &__form {
         display: flex;
+        gap: 20px;
         justify-content: space-between;
 
         .contact__info {
@@ -77,11 +78,13 @@
             flex-direction: column;
             gap: 15px;
             width: 50%;
+            anchor-name: --contactForm;
 
             .contact__form-inner {
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
+
 
                 .contact__form-row {
                     display: flex;
@@ -131,6 +134,19 @@
                     @include utils.button-styles('secondary');
                 }
             }
+
+            .contact__info-box {
+                position: absolute;
+                background-color: utils.$secondary-color;
+                color: utils.$primary-color;
+                padding: 10px;
+                width: fit-content;
+                border-radius: 7px;
+                font-size: 18px;
+                position-anchor: --contactForm;
+                bottom: anchor(end);
+                right: anchor(end);
+            }
         }
     }
 
@@ -154,7 +170,6 @@
             flex-direction: column;
 
             .contact__info {
-               
                 .contact__heading {
                     font-size: 20px;
                 }
@@ -164,9 +179,7 @@
                 }
 
                 .contact__details {
-
                     .contact__detail {
-
                         .contact__icon {
                             font-size: 15px;
                         }
@@ -178,7 +191,6 @@
                 }
 
                 .contact__social {
-
                     i {
                         padding: 15px;
                         font-size: 15px;
@@ -190,7 +202,6 @@
                 width: 100%;
 
                 .contact__form-inner {
-                  
                     .contact__label {
                         font-size: 15px;
                     }
@@ -200,7 +211,7 @@
                         font-size: 15px;
                     }
 
-                     .contact__input::placeholder,
+                    .contact__input::placeholder,
                     .contact__textarea::placeholder {
                         font-size: 15px;
                     }
@@ -210,7 +221,14 @@
                         border-radius: 7px;
                     }
                 }
+
+                .contact__info-box {
+                    font-size: 16px;
+                    padding: 8px;
+                }
             }
         }
+
+
     }
 }

@@ -1,55 +1,139 @@
 @use '../utils/utils.scss' as utils;
 
-.header {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     background-color: utils.$secondary-color;
     color: utils.$primary-color;
-    padding: 20px 0;
+    height: 60px;
+    padding: 0 1em;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 999;
+}
 
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: utils.$primary-color;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    li {
+        margin: 0 1rem;
 
         a {
             color: utils.$primary-color;
+            text-decoration: none;
+            font-size: 18px;
             font-weight: bold;
-            font-size: 25px;
         }
-
     }
+}
 
-    &__menu {
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: utils.$primary-color;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked+.menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+    .menu-button-container {
         display: flex;
-        gap: 20px;
     }
 
-    &__toggle {
-        display: none;
-        cursor: pointer;
-        background-color: utils.$secondary-color;
-        color: utils.$primary-color;
-        border: none;
-        font-size: 20px;
-    }
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 60px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
 
-    @media screen and (max-width: 576px) {
-        &__menu {
-            display: none;
-        }
+        li {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background-color: utils.$secondary-color;
+            padding: 0;
+            height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
 
-        &__toggle {
-            display: block;
-        }
-
-        nav {
             a {
-                font-size: 18px;
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
             }
         }
+    }
+
+    #menu-toggle:checked~.menu li {
+        height: 2.5em;
+        padding: 0.5em;
+    }
+
+    #menu-toggle:checked~.menu li a {
+        opacity: 1;
     }
 }

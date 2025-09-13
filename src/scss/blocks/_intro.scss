@@ -4,11 +4,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: utils.$primary-color;
     height: 100vh;
-    padding: 50px 0;
+    padding: max(20px, 50px) 0;
+    background-image: url("../src/img/intro/banner.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 
     &__content {
+
         .intro__image {
             width: calc(50% - 20px);
             display: flex;
@@ -24,6 +29,7 @@
         .row {
             align-items: center;
             gap: 20px;
+            backdrop-filter: blur(5px);
         }
 
         .intro__text {
@@ -31,7 +37,7 @@
             flex-direction: column;
             justify-content: center;
             gap: 15px;
-            width: calc(50% - 20px);
+            width:  min(50%, 50rem);
 
             .intro__title {
                 font-size: 40px;
@@ -145,6 +151,7 @@
                 width: calc(100% - 20px);
                 flex-direction: column;
                 align-items: center;
+
                 .intro__title {
                     font-size: 25px;
                 }
