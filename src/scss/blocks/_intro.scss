@@ -62,13 +62,6 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-
-          &:hover {
-            background-color: utils.$primary-color;
-            color: utils.$secondary-color;
-            transform: scale(1.1);
-          }
         }
       }
 
